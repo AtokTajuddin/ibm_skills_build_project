@@ -1,8 +1,11 @@
 {
   "version": 2,
+  "buildCommand": "npm install --force --prefix frontend && npm run build --prefix frontend",
   "outputDirectory": "frontend/build",
-  "framework": "create-react-app",
-  "nodejs": "18.x",
+  "installCommand": "npm install --force --prefix frontend",
+  "env": {
+    "NODE_ENV": "production"
+  },
   "rewrites": [
     {
       "source": "/api/(.*)",
@@ -13,31 +16,9 @@
       "destination": "/frontend/build/index.html"
     }
   ],
-  "env": {
-    "NODE_ENV": "production"
-  },
   "functions": {
     "api/index.js": {
       "maxDuration": 30
     }
-  },
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET, POST, PUT, DELETE, OPTIONS"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "X-Requested-With, Content-Type, Authorization"
-        }
-      ]
-    }
-  ]
+  }
 }

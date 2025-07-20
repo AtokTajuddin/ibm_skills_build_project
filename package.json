@@ -6,15 +6,15 @@
   "scripts": {
     "start": "node api/index.js",
     "build": "npm run build:frontend",
-    "build:frontend": "cd frontend && npm install && npm run build",
+    "build:frontend": "npm install --prefix frontend && npm run build --prefix frontend",
     "dev": "cd backend && npm run dev",
     "dev:frontend": "cd frontend && npm start",
     "install:all": "npm install && cd frontend && npm install && cd backend && npm install",
-    "vercel-build": "cd frontend && npm install && npm run build",
+    "vercel-build": "npm install --prefix frontend && npm run build --prefix frontend",
     "setup": "node scripts/setup-dev-env.js",
     "setup:env": "node scripts/setup-dev-env.js",
     "validate:env": "node validate-env.js",
-    "postinstall": "npm run validate:env || echo 'Run npm run setup to configure environment'"
+    "postinstall": "echo 'Skipping postinstall in production'"
   },
   "keywords": ["healthcare", "ai", "virtual", "hospital", "medical"],
   "author": "Virtual Hospital Team",
