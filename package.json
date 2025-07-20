@@ -6,11 +6,11 @@
   "scripts": {
     "start": "node api/index.js",
     "build": "npm run build:frontend",
-    "build:frontend": "npm install --force --prefix frontend && npm run build --prefix frontend",
+    "build:frontend": "cd frontend && npm install --force && npm run build",
     "dev": "cd backend && npm run dev",
     "dev:frontend": "cd frontend && npm start",
     "install:all": "npm install && cd frontend && npm install && cd backend && npm install",
-    "vercel-build": "npm install --force --prefix frontend && npm run build --prefix frontend",
+    "vercel-build": "cd frontend && npm install --force && npm run build",
     "setup": "node scripts/setup-dev-env.js",
     "setup:env": "node scripts/setup-dev-env.js",
     "validate:env": "node validate-env.js",
