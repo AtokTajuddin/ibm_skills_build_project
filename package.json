@@ -10,7 +10,6 @@
     "dev": "cd backend && npm run dev",
     "dev:frontend": "cd frontend && npm start",
     "install:all": "npm install && cd frontend && npm install && cd backend && npm install",
-    "vercel-build": "cd frontend && npm install --force && npm run build",
     "setup": "node scripts/setup-dev-env.js",
     "setup:env": "node scripts/setup-dev-env.js",
     "validate:env": "node validate-env.js",
