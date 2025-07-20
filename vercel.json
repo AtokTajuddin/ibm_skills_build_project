@@ -1,8 +1,9 @@
 {
   "version": 2,
-  "buildCommand": "npm install --force --prefix frontend && npm run build --prefix frontend",
+  "framework": "create-react-app",
+  "buildCommand": "cd frontend && npm install --force && npm run build",
   "outputDirectory": "frontend/build",
-  "installCommand": "npm install --force --prefix frontend",
+  "installCommand": "cd frontend && npm install --force",
   "env": {
     "NODE_ENV": "production"
   },
@@ -18,7 +19,8 @@
   ],
   "functions": {
     "api/index.js": {
-      "maxDuration": 30
+      "maxDuration": 30,
+      "runtime": "nodejs22.x"
     }
   }
 }

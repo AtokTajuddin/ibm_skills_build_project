@@ -6,11 +6,11 @@
   "scripts": {
     "start": "node api/index.js",
     "build": "npm run build:frontend",
-    "build:frontend": "npm install --prefix frontend && npm run build --prefix frontend",
+    "build:frontend": "npm install --force --prefix frontend && npm run build --prefix frontend",
     "dev": "cd backend && npm run dev",
     "dev:frontend": "cd frontend && npm start",
     "install:all": "npm install && cd frontend && npm install && cd backend && npm install",
-    "vercel-build": "npm install --prefix frontend && npm run build --prefix frontend",
+    "vercel-build": "npm install --force --prefix frontend && npm run build --prefix frontend",
     "setup": "node scripts/setup-dev-env.js",
     "setup:env": "node scripts/setup-dev-env.js",
     "validate:env": "node validate-env.js",
@@ -26,7 +26,7 @@
     "mongodb": "^6.17.0"
   },
   "engines": {
-    "node": "18.x",
+    "node": "22.x",
     "npm": ">=8.0.0"
   }
 }
