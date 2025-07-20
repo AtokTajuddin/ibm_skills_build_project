@@ -1,0 +1,32 @@
+{
+  "name": "virtual-hospital",
+  "version": "1.0.0",
+  "description": "Virtual Hospital - AI-powered healthcare platform",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "node api/index.js",
+    "build": "npm run build:frontend",
+    "build:frontend": "cd frontend && npm install && npm run build",
+    "dev": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm start",
+    "install:all": "npm install && cd frontend && npm install && cd backend && npm install",
+    "vercel-build": "npm run build:frontend",
+    "setup": "node scripts/setup-dev-env.js",
+    "setup:env": "node scripts/setup-dev-env.js",
+    "validate:env": "node validate-env.js",
+    "postinstall": "npm run validate:env || echo 'Run npm run setup to configure environment'"
+  },
+  "keywords": ["healthcare", "ai", "virtual", "hospital", "medical"],
+  "author": "Virtual Hospital Team",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.0",
+    "mongodb": "^6.17.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
