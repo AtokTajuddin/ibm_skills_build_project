@@ -1,0 +1,9 @@
+{
+  "name": "virtual-hospital-vercel",
+  "version": "1.0.0",
+  "description": "Vercel deployment for Virtual Hospital",
+  "scripts": {
+    "build": "cd frontend && npm install --force && npm run build",
+    "start": "node api/index.js"
+  }
+}

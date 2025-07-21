@@ -5,7 +5,8 @@
   "main": "api/index.js",
   "scripts": {
     "start": "node api/index.js",
-    "build": "cd frontend && npm install --force && npm run build",
+    "build": "node vercel-build.js && cd frontend && npm install --force && npm run build",
+    "vercel-build": "node vercel-build.js && cd frontend && npm install --force && npm run build",
     "dev": "cd backend && npm run dev",
     "dev:frontend": "cd frontend && npm start",
     "install:all": "npm install && cd frontend && npm install && cd backend && npm install",
