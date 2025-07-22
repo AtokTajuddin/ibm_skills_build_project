@@ -1,0 +1,30 @@
+# Vercel Deployment Configuration
+# This file contains instructions on how to deploy this project to Vercel
+
+# Node.js version
+NODE_VERSION=18
+
+# Build command
+BUILD_COMMAND=npm run build
+
+# Install command
+INSTALL_COMMAND=npm run install:all
+
+# Output directory
+OUTPUT_DIRECTORY=frontend/build
+
+# Serverless function directory
+FUNCTIONS_DIRECTORY=api
+
+# Environment variables needed:
+# - LLM_API_KEY (for AI functionality)
+# - MONGODB_URI (for database connection)
+# - JWT_SECRET (for authentication)
+# - FIREBASE_API_KEY (for Firebase integration)
+# - FRONTEND_URL (for CORS and redirects)
+
+# Important notes:
+# 1. Make sure to add all environment variables in the Vercel dashboard
+# 2. The build process will automatically create necessary files
+# 3. API endpoints will be available at /api/*
+# 4. Frontend will be served at the root path

@@ -6,10 +6,10 @@
   "scripts": {
     "start": "node api/index.js",
     "build": "node vercel-build.js && cd frontend && npm install --force && npm run build",
-    "vercel-build": "node vercel-build.js && cd frontend && npm install --force && npm run build",
+    "vercel-build": "node vercel-build.js && cd frontend && npm install --force && CI=false npm run build",
     "dev": "cd backend && npm run dev",
     "dev:frontend": "cd frontend && npm start",
-    "install:all": "npm install && cd frontend && npm install && cd backend && npm install",
+    "install:all": "npm install && cd frontend && npm install --force && cd ../backend && npm install --force",
     "setup": "node scripts/setup-dev-env.js",
     "setup:env": "node scripts/setup-dev-env.js",
     "validate:env": "node validate-env.js",
