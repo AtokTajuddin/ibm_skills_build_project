@@ -46,7 +46,8 @@ export const AuthProvider = ({ children }) => {
       }
 
       try {
-        const response = await fetch('http://localhost:5001/api/auth/refresh', {
+        const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
+        const response = await fetch(`${API_URL}/auth/refresh`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -96,7 +97,8 @@ export const AuthProvider = ({ children }) => {
     }
 
     try {
-      const response = await fetch('http://localhost:5001/api/auth/refresh', {
+      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
+      const response = await fetch(`${API_URL}/auth/refresh`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -136,7 +138,8 @@ export const AuthProvider = ({ children }) => {
     // Call logout endpoint to invalidate session on server
     if (token) {
       try {
-        await fetch('http://localhost:5001/api/auth/logout', {
+        const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
+        await fetch(`${API_URL}/auth/logout`, {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`,
